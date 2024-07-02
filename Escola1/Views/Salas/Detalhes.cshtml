@@ -1,0 +1,23 @@
+﻿@model SalaViewModel
+
+@{
+    ViewData["Title"] = "Salas";
+}
+
+<h1>Detalhes Sala</h1>
+<hr />
+<br />
+<dl class="row">
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(Model => Model.SalaId)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(Model => Model.SalaId)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(Model => Model.Numero)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(Model => Model.Numero)
+    </dd>
+</dl>

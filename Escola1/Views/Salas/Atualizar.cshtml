@@ -1,0 +1,25 @@
+﻿@model SalaViewModel
+
+@{
+    ViewData["Title"] = "Salas";
+}
+
+<h1>Atualizar Sala</h1>
+<hr />
+<form asp-action="Atualizar" method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="SalaId" />
+    <div class="form-group">
+        <label asp-for="Numero" class="control-label"></label>
+        <input asp-for="Numero" class="form-control" />
+        <span asp-validation-for="Numero" class="text-danger"></span>
+    </div>
+    <div class="form-group" style="padding-top: 10px">
+        <input type="submit" value="Salvar" class="btn btn-primary" />
+        <a asp-action="Index" class="btn btn-secondary">Retornar</a>
+    </div>
+    @if(ViewBag.Erro != null)
+    {
+        <h4 class="text-danger">@ViewBag.Erro</h4>
+    }
+</form>

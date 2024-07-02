@@ -1,0 +1,38 @@
+﻿@model TurmaViewModel
+
+@{
+    ViewData["Title"] = "Turmas";
+}
+
+<h1>Atualizar Turma</h1>
+<hr />
+<form asp-action="Atualizar" method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="TurmaId" />
+    <div class="form-group">
+        <label asp-for="Ano" class="control-label"></label>
+        <input asp-for="Ano" class="form-control" />
+        <span asp-validation-for="Ano" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Sequencia" class="control-label"></label>
+        <input asp-for="Sequencia" class="form-control" />
+        <span asp-validation-for="Sequencia" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="SalaId" class="control-label"></label>
+        <select asp-for="SalaId" class="form-control" asp-items="@ViewBag.SalaId">
+            <option selected="true" value="">Selecionar</option>
+        </select>
+        <span asp-validation-for="SalaId" class="text-danger"></span>
+    </div>
+
+    <div class="form-group" style="padding-top: 10px">
+        <input type="submit" value="Salvar" class="btn btn-primary" />
+        <a asp-action="Index" class="btn btn-secondary">Retornar</a>
+    </div>
+    @if (ViewBag.Erro != null)
+    {
+        <h4 class="text-danger">@ViewBag.Erro</h4>
+    }
+</form>

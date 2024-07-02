@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+
+<h1>Módulos</h1>
+<hr />
+<br />
+<div class="row">
+    <div class="col-md-4">
+        <div class="card">
+            <a asp-controller="Alunos" asp-action="Index" class="card-body btn btn-primary">
+                Alunos
+            </a>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card">
+            <a asp-controller="Turmas" asp-action="Index" class="card-body btn btn-success">
+                Turmas
+            </a>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card">
+            <a asp-controller="Salas" asp-action="Index" class="card-body btn btn-danger">
+                Salas
+            </a>
+        </div>
+    </div>
+</div>

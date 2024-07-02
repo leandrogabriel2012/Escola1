@@ -1,0 +1,34 @@
+﻿@model SalaViewModel
+
+@{
+    ViewData["Title"] = "Salas";
+}
+
+<h1>Deletar Sala</h1>
+<h3>Confirmar a exclusão desta Sala?</h3>
+<hr />
+<br />
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(Model => Model.SalaId)
+        </dt>
+        <dl class="col-sm-10">
+            @Html.DisplayFor(Model => Model.SalaId)
+        </dl>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(Model => Model.Numero)
+        </dt>
+        <dl class="col-sm-10">
+            @Html.DisplayFor(Model => Model.Numero)
+        </dl>
+    </dl>
+
+    <form asp-action="DeletarSala">
+        <input type="hidden" asp-for="SalaId" />
+        <div class="form-group" style="padding-top: 10px">
+            <input type="submit" value="Deletar" class="btn btn-danger" />
+            <a asp-action="Index" class="btn btn-secondary">Retornar</a>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,51 @@
+﻿@model TurmaViewModel
+
+@{
+    ViewData["Title"] = "Salas";
+}
+
+<h1> Criar Turma</h1>
+<form asp-action="Criar" method="post">
+    <div class="form-horizontal">
+        <hr />
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="Ano" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Ano" class="form-control" />
+                <span asp-validation-for="Ano" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Sequencia" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Sequencia" class="form-control" />
+                <span asp-validation-for="Sequencia" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="SalaId" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <select asp-for="SalaId" class="form-control" asp-items="@ViewBag.SalaId">
+                    <option selected="true" value="">Selecionar</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group" style="padding-top: 10px">
+            <div class="col-md-offset-2 col-md-2">
+                <input type="submit" value="Criar" class="btn btn-primary" />
+                <a asp-action="Index" class="btn btn-secondary">Retornar</a>
+            </div>
+        </div>
+        @if (ViewBag.Erro != null)
+        {
+            <div>
+                <h4 class="text-danger">@ViewBag.Erro</h4>
+            </div>
+        }
+
+    </div>
+</form>

@@ -1,0 +1,77 @@
+﻿@model IEnumerable<AlunoViewModel>
+
+@{
+    ViewData["Title"] = "Alunos";
+}
+
+<h1>Alunos</h1>
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <div>
+            <div class="pull-left">
+                <a asp-action="Criar" class="btn btn-success">
+                    <span class="fas fa-plus"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<br />
+<div class="panel panel-default">
+    <table class="table table-striped table-sm">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.AlunoId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Nome)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Identidade)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Nascimento)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TurmaId)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(model => item.AlunoId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => item.Nome)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => item.Identidade)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => item.Nascimento)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => item.TurmaId)
+                    </td>
+                    <td>
+                        <a asp-action="Detalhes" asp-route-id="@item.AlunoId" class="btn btn-primary">
+                            <span class="fas fa-eye"></span>
+                        </a>
+                        <a asp-action="Atualizar" asp-route-id="@item.AlunoId" class="btn btn-warning">
+                            <span class="fas fa-edit"></span>
+                        </a>
+                        <a asp-action="Deletar" asp-route-id="@item.AlunoId" class="btn btn-danger">
+                            <span class="fas fa-trash-alt"></span>
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,41 @@
+﻿@model AlunoViewModel
+
+@{
+    ViewData["Title"] = "Alunos";
+}
+
+<h1>Detalhes Aluno</h1>
+<hr />
+<br />
+<dl class="row">
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(Model => Model.AlunoId)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(Model => Model.AlunoId)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(Model => Model.Nome)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(Model => Model.Nome)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(Model => Model.Identidade)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(Model => Model.Identidade)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(Model => Model.Nascimento)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(Model => Model.Nascimento)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(Model => Model.TurmaId)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(Model => Model.TurmaId)
+    </dd>
+</dl>
